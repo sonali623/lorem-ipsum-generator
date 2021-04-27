@@ -1,0 +1,200 @@
+::selection {
+    background: #FF7D7A;
+  }
+  
+
+body{
+    background-color: rgb(85, 98, 113);
+}
+
+nav {
+    margin-top: 75px;
+}
+    
+.navbar{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: small;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+}
+
+a:hover {
+    color: #FF6A67;
+}
+main {
+    display: block;
+}
+
+.header {
+    margin-top: 85px;
+    margin-left: 2.5em;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-size: xx-large;
+    color: #7B8898;
+}
+.subtext {
+    margin-top: -35px;
+    margin-left: 3.3em;
+    margin-right: 50%;
+    font-size: x-large;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #ffffff;
+}
+
+.footer-line-one{
+    display: flex;
+    justify-content: space-between;
+}
+
+.fa-quote-left {
+    margin-left: 50px;
+    padding-bottom: 2px;
+    color: #ccc;
+}
+.module {
+    background: white;
+    border: 1px solid #ccc;
+    margin: 3%;
+    width: 60%;
+    margin-left: 10em;
+    border-radius: 5px;
+
+   /*animation: widen 10s linear alternate infinite;
+   */
+}
+.module .desc {
+    padding: 25px;
+    margin: 0 0 0.5rem 0;
+}
+.module > p {
+    padding: 0 1rem;
+}
+.stripe-1 {
+    border-radius: 5px;
+    color: white;
+    background: repeating-linear-gradient(
+        -45deg, #fff, #fff 8px, #F4F6F8 8px, #F4F6F8 16px
+    );
+}
+/*@keyframes widen {
+    100% {
+        width: 100%;
+   }
+}
+*/
+.box-footer {
+    padding: 10px;
+}
+/* form {
+    display: flex;
+    justify-content:space-evenly;
+} */
+input {
+    align-items: center;
+    text-align: center;
+    /* display: inline-block; */
+    margin-right: 15px;
+    width:2em;
+    padding: 4px;
+    margin-left: 5px;
+    border: 3px solid #d3dbe4;
+    border-radius: 0.375em;
+    box-shadow: none;
+    background-color: #FFFFFF;
+    color: #7B8898;
+    font-size: 10px;
+    font-size: 1.5em;
+    font-weight: 700;
+    font-style: normal;
+    font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1;
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+}
+
+.dropdown {
+    cursor: pointer;
+    display: inline-block;
+    width: 13em;
+    margin-right: 0.25em;
+    padding: 0.875em 1em 0.75em;
+    padding-right: 5px;
+    border: 3px solid #d3dbe4;
+    border-radius: 0.375em;
+    background-color: #FFFFFF;
+    background-repeat: no-repeat;
+    background-position: center right;
+    color: #7B8898;
+    font-size: 10px;
+    font-size: 0.8em;
+    font-weight: 700;
+    font-style: normal;
+    font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.2857142857;
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+}
+
+button {
+    cursor: pointer;
+display: inline-block;
+padding: 9px;
+padding-right: 10px;
+outline: none;
+border: none;
+border-radius: 0.375em;
+box-shadow: none;
+background: repeating-linear-gradient(-45deg, #FF7D7A, #FF7D7A 8px, #FF6A67 8px, #FF6A67 16px);
+color: #FFFFFF;
+font-size: 10px;
+font-size: 1em;
+font-weight: 700;
+font-style: normal;
+font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
+line-height: 1.2857142857;
+letter-spacing: 0.075em;
+text-transform: uppercase;
+-webkit-appearance: none;
+transition: all 400ms cubic-bezier(0.16, 0.68, 0.43, 0.99);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.text {
+    position: relative;
+    display: block;
+    quotes: "“" "”" "‘" "’";
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: #7B8898;
+    font-size: 14px;
+    font-size: 1em;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Mercury SSm A", "Mercury SSm B", Georgia, Times, "Times New Roman", "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", 宋体, SimSun, STXihei, "华文细黑", serif;
+    line-height: 1.375;
+    letter-spacing: 0;
+    background-repeat: repeat-x;
+    background-position: 0 12px;
+    background-size: 4px 4px;
+    animation: fadeInLorem 1000ms linear;
+}
+
