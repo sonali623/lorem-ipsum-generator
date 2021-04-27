@@ -137,48 +137,48 @@ const number = document.getElementById("amount");
 const result = document.querySelector(".text");
 const type = document.getElementById("type");
 
-form.addEventListener('submit',e => {
+form.addEventListener('submit', e => {
     e.preventDefault()
     const value = parseInt(amount.value);
-    if(type.value == 's'){
-        text = generateParagraphAndSentence(sentences,value);
-    }else if(type.value == 'w'){
-        text = generateWords(words,value);
-    }else{
-        text = generateParagraphAndSentence(paragraphs,value);
+    if (type.value == 's') {
+        text = generateParagraphAndSentence(sentences, value);
+    } else if (type.value == 'w') {
+        text = generateWords(words, value);
+    } else {
+        text = generateParagraphAndSentence(paragraphs, value);
     }
-    
+
     result.innerHTML = text;
     countWords();
 })
 
-function generateParagraphAndSentence(array,num){
-  
+function generateParagraphAndSentence(array, num) {
+
     text = ""
-    if(num > array.length){
-        for( i = 0;i<Math.floor(num/array.length);i++){
-            p = array.slice(0,array.length+1);
-            text = text +  p.map(item => `<p class='result'>${item}</p>`).join("");
+    if (num > array.length) {
+        for (i = 0; i < Math.floor(num / array.length); i++) {
+            p = array.slice(0, array.length + 1);
+            text = text + p.map(item => `<p class='result'>${item}</p>`).join("");
         }
-        num = num%array.length;
+        num = num % array.length;
     }
-    p = array.slice(0,num);
+    p = array.slice(0, num);
     text = text + p.map(item => `<p class='result'>${item}</p>`).join("");
 
     return text
 }
 
-function generateWords(array,num){
-  
+function generateWords(array, num) {
+
     text = ""
-    if(num > array.length){
-        for( i = 0;i<Math.floor(num/array.length);i++){
-            p = array.slice(0,array.length+1);
-            text = text +  p.map(item => `${item} `).join("");
+    if (num > array.length) {
+        for (i = 0; i < Math.floor(num / array.length); i++) {
+            p = array.slice(0, array.length + 1);
+            text = text + p.map(item => `${item} `).join("");
         }
-        num = num%array.length;
+        num = num % array.length;
     }
-    p = array.slice(0,num);
+    p = array.slice(0, num);
     text = text + p.map(item => `${item} `).join("");
 
     text = `<p class='result'>` + text + `</p>`
@@ -187,57 +187,54 @@ function generateWords(array,num){
 
 //Copy to clipboard
 function copyToClipboard() {
-    ptag = document.getElementsByClassName("result") ; 
+    ptag = document.getElementsByClassName("result");
     text = ""
 
-    if(ptag.length > 1){
-        for(i = 0;i<ptag.length;i++){
+    if (ptag.length > 1) {
+        for (i = 0; i < ptag.length; i++) {
             text = text + ptag[i].innerHTML + `\n`;
         }
-    }else if(ptag.length == 1){
+    } else if (ptag.length == 1) {
         text = ptag[0].innerHTML;
-    }else{
+    } else {
         text = result.innerText;
     }
-    
+
     if (window.clipboardData && window.clipboardData.setData) {
         // Internet Explorer-specific code path to prevent textarea being shown while dialog is visible.
         return window.clipboardData.setData("Text", text);
 
-    }
-    else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+    } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
         var textarea = document.createElement("textarea");
         textarea.textContent = text;
-        textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in Microsoft Edge.
+        textarea.style.position = "fixed"; // Prevent scrolling to bottom of page in Microsoft Edge.
         document.body.appendChild(textarea);
         textarea.select();
         try {
-            return document.execCommand("copy");  // Security exception may be thrown by some browsers.
-        }
-        catch (ex) {
+            return document.execCommand("copy"); // Security exception may be thrown by some browsers.
+        } catch (ex) {
             console.warn("Copy to clipboard failed.", ex);
             return false;
-        }
-        finally {
+        } finally {
             document.body.removeChild(textarea);
         }
     }
-    
+
 }
 
- function countWords() {
-  
-    text = result.textContent;
-    var numWords = 0;
+//  function countWords() {
 
-    for (var i = 0; i < text.length; i++) {
-        var currentCharacter = text[i];
+//     text = result.textContent;
+//     var numWords = 0;
 
-        if (currentCharacter == " ") {
-            numWords += 1;
-        }
-    }
+//     for (var i = 0; i < text.length; i++) {
+//         var currentCharacter = text[i];
 
-    numWords += 1;
-    document.getElementById("word-count").innerHTML = 'Word Count : ' + numWords ;
-}
+//         if (currentCharacter == " ") {
+//             numWords += 1;
+//         }
+//     }
+
+//     numWords += 1;
+//     document.getElementById("word-count").innerHTML = 'Word Count : ' + numWords ;
+// }
